@@ -93,7 +93,10 @@ function sortObjectByKeys(obj: any): any {
   const keysSorted = Object.keys(obj  ?? '').sort();
   const objSorted = keysSorted.reduce((_obj, key) => {
     const val = obj[key];
-    _obj[key] = typeof val === 'object' ? sortObjectByKeys(val) : val;
+    _obj[key] =
+      Object.prototype.toString.call(val) === '[object Object]'
+        ? sortObjectByKeys(val)
+        : val;
     
     return _obj;
   }, {} as any);
