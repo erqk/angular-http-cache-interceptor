@@ -32,7 +32,7 @@ There are 3 options available:
 
 The URLs that you don't want it to be cached. Supports regex.
 
-### `ttls`
+### `ttls` (ms)
 
 The key value pairs to customize ttl of the specific URL. The priority is higher than `globalTTL`.
 
@@ -52,7 +52,7 @@ The key value pairs to customize ttl of the specific URL. The priority is higher
 }
 ```
 
-### `globalTTL`
+### `globalTTL` (ms)
 
 The global ttl to all the URLs.
 
