@@ -43,7 +43,7 @@ export const httpCacheInterceptor = (options?: CacheOptions) => {
         }
 
         if (data && ttl && ttl > new Date().getTime()) {
-          return of(prevReq.data);
+          return of(prevReq.data).pipe(delay(0));
         }
 
         prevReq.data$ = new Subject<any>();
