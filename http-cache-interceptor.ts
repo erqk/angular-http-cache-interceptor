@@ -42,7 +42,7 @@ export const httpCacheInterceptor = (options?: CacheOptions) => {
           return prevReq.data$;
         }
 
-        if (data && ttl && ttl > new Date().getTime()) {
+        if (data.body && ttl && ttl > new Date().getTime()) {
           // Use delay(0) to make response asynchronous, in order to trigger `finalize()`.
           return of(prevReq.data).pipe(delay(0));
         }
